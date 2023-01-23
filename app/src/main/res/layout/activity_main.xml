@@ -12,22 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="quote go here :D"
-        android:textSize="25sp"
         android:textAlignment="center"
-        android:textStyle="bold"
         android:textColor="#DD1111"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.477" />
 
     <Button
         android:id="@+id/getquote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="Get a quote"
         android:background="@drawable/main_buttons"
+        android:text="Get a quote"
         android:textColor="#D1C028"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,12 +45,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
+        android:fontFamily="@font/patrickhand"
         android:text="Kanye Quotes"
         android:textAlignment="center"
         android:textColor="#D1C028"
         android:textSize="50sp"
         android:textStyle="bold"
-        android:fontFamily="@font/patrickhand"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,8 +60,8 @@
         android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Quote"
         android:background="@drawable/main_buttons"
+        android:text="Save Quote"
         android:textColor="#D1C028"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/getquote"
@@ -71,13 +73,39 @@
         android:id="@+id/saved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Saved Quotes"
         android:background="@drawable/main_buttons"
+        android:text="View Saved Quotes"
         android:textColor="#D1C028"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/save" />
+
+    <Button
+        android:id="@+id/gotoinfo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/info"
+        android:text=" ? "
+        android:textColor="#D1C028"
+        app:layout_constraintBottom_toTopOf="@+id/saved"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title" />
+
+    <!-- Test -->
+    <!-- ca-app-pub-3940256099942544/6300978111 -->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

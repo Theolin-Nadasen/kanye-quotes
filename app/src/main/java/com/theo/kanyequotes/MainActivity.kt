@@ -7,6 +7,9 @@ import android.provider.Settings.Global
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -25,7 +28,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // initialize the db
         appDB = appDatabase.getDatabase(this)
+
+        // initialize the ads
+        MobileAds.initialize(this)
+
+        val adRequest = AdRequest.Builder().build()
+
+        val adview = findViewById<AdView>(R.id.adView)
+        adview.loadAd(adRequest)
+
 
         val textView : TextView = findViewById(R.id.textView)
 
@@ -69,6 +82,14 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+
+
+        val infobutton : Button = findViewById(R.id.gotoinfo)
+        infobutton.setOnClickListener {
+            val intent = Intent(this, about::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }
