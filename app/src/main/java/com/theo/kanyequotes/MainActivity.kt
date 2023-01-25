@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings.Global
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.ads.AdRequest
@@ -87,6 +88,17 @@ class MainActivity : AppCompatActivity() {
         val infobutton : Button = findViewById(R.id.gotoinfo)
         infobutton.setOnClickListener {
             val intent = Intent(this, about::class.java)
+            startActivity(intent)
+        }
+
+        val shareApp = findViewById<ImageButton>(R.id.ShareApp)
+        shareApp.setOnClickListener{
+            val msg = "Kanye Quotes - https://play.google.com/store/apps/details?id=com.theo.kanyequotes"
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, msg)
+            intent.type = "text/plain"
+
             startActivity(intent)
         }
 

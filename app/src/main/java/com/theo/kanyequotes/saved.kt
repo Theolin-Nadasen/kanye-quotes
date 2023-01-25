@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.theo.kanyequotes.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
 
@@ -19,6 +22,14 @@ class saved : AppCompatActivity() {
         setContentView(R.layout.activity_saved)
 
         appDB = appDatabase.getDatabase(this) // initialize
+
+        //ads
+
+        val adRequest = AdRequest.Builder().build()
+        val adview : AdView = findViewById(R.id.savedAds)
+
+        adview.loadAd(adRequest)
+
 
         val adapter = quotesAdapter(savedquotes)
 

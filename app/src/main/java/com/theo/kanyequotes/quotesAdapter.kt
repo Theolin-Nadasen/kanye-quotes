@@ -1,15 +1,15 @@
 package com.theo.kanyequotes
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class quotesAdapter (
     var quotes : MutableList<quote>
@@ -32,7 +32,7 @@ class quotesAdapter (
             text = quotes[position].quote
         }
 
-        holder.itemView.findViewById<Button>(R.id.Delete).apply {
+        holder.itemView.findViewById<ImageButton>(R.id.Delete).apply {
             setOnClickListener {
 
                 GlobalScope.launch {
@@ -42,6 +42,22 @@ class quotesAdapter (
 
                 notifyDataSetChanged()
                 Toast.makeText(holder.itemView.context, "DELETED!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        holder.itemView.findViewById<ImageButton>(R.id.share).apply {
+            setOnClickListener {
+
+                val msg = quotes[position].quote
+
+                val intent = Intent()
+                intent.action = Intent.ACTION_SEND
+                intent.putExtra(Intent.EXTRA_TEXT, msg)
+                intent.type = "text/plain"
+
+                context.startActivity(intent)
+
+
             }
         }
     }

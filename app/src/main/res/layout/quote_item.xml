@@ -28,23 +28,25 @@
                 android:id="@+id/savedQuote"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Quote"
-                android:textAlignment="center"
-                android:textColor="#DD1111"
                 android:autoSizeTextType="uniform"
+                android:text="Quote"
+                android:fontFamily="@font/patrickhand"
+                android:textAlignment="center"
+                android:textColor="#D1C028"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/Delete"
+                app:layout_constraintEnd_toStartOf="@+id/share"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.5" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/Delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DELETE"
                 android:background="#ff3333"
+                android:src="@android:drawable/ic_delete"
                 android:textStyle="bold"
+                android:layout_marginEnd="5dp"
                 app:layout_constraintBottom_toBottomOf="@+id/savedQuote"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -61,6 +63,17 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.5"
                 app:srcCompat="@android:drawable/btn_star_big_on" />
+
+            <ImageButton
+                android:id="@+id/share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8BC34A"
+                android:foregroundTint="#54868C"
+                android:foregroundTintMode="add"
+                app:layout_constraintEnd_toStartOf="@+id/Delete"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_share" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

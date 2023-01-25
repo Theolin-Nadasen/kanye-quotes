@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#252525"
+    android:background="@drawable/kanye_background"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,8 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="quote go here :D"
+        android:fontFamily="@font/patrickhand"
         android:textAlignment="center"
-        android:textColor="#DD1111"
+        android:textColor="#D1C028"
+        android:background="#333333"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,9 +31,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:background="@drawable/main_buttons"
-        android:text="Get a quote"
+        android:text="Get quote"
+        android:fontFamily="@font/kanit"
         android:textColor="#D1C028"
         android:textStyle="bold"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/save"
@@ -45,11 +49,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
-        android:fontFamily="@font/patrickhand"
+        android:fontFamily="@font/pacific"
         android:text="Kanye Quotes"
         android:textAlignment="center"
         android:textColor="#D1C028"
-        android:textSize="50sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -62,8 +66,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/main_buttons"
         android:text="Save Quote"
+        android:fontFamily="@font/kanit"
         android:textColor="#D1C028"
         android:textStyle="bold"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/getquote"
         app:layout_constraintEnd_toStartOf="@+id/saved"
         app:layout_constraintHorizontal_bias="0.5"
@@ -75,8 +81,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/main_buttons"
         android:text="View Saved Quotes"
+        android:fontFamily="@font/kanit"
         android:textColor="#D1C028"
         android:textStyle="bold"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -103,6 +111,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title" />
+
+    <ImageButton
+        android:id="@+id/ShareApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#8BC34A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_share"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"/>
 
     <!-- Test -->
     <!-- ca-app-pub-3940256099942544/6300978111 -->
